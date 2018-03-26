@@ -1,0 +1,13 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    > * {
+        margin-bottom: $md-u;
+    }
+}
+
+.form__error {
+    margin: 0 0 $md-u 0;
+    font-style: italic;
+    color: red;
+}

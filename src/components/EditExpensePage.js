@@ -3,12 +3,6 @@ import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
 import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 
-// should render editExpensePage snapshot
-
-// should handle editExpense spies
-
-// should handle removeExpense spies
-
 export class EditExpensePage extends React.Component {
     onSubmit = (expense) => {
         this.props.startEditExpense(this.props.expense.id, expense);
@@ -21,33 +15,22 @@ export class EditExpensePage extends React.Component {
     render() {
         return (
             <div>
-                 <ExpenseForm
-                    expense={this.props.expense}
-                    onSubmit={this.onSubmit}
-                />
-                <button onClick={this.onRemove}>Remove</button>
+                <div className="page-header">
+                    <div className="content-container">
+                        <h1 className="page-header__title">Edit Expense</h1>
+                    </div>
+                </div>
+                <div className="content-container">
+                    <ExpenseForm
+                        expense={this.props.expense}
+                        onSubmit={this.onSubmit}
+                    />
+                    <button className="button button--secondary" onClick={this.onRemove}>Remove Expense</button>
+                </div>
             </div>
         );
     }
 }
-
-// const EditExpensePage = (props) => {
-//     return (
-//         <div>
-//             <ExpenseForm
-//                 expense={props.expense}
-//                 onSubmit={(expense) => {
-//                     props.dispatch(editExpense(props.expense.id, expense));
-//                     props.history.push('/');
-//                 }}
-//             />
-//             <button onClick={() => {
-//                 props.dispatch(removeExpense({id: props.expense.id}));
-//                 props.history.push('/');
-//             }}>Remove</button>
-//         </div>
-//     );
-// };
 
 const mapDispatchToProps = (dispatch, props) => ({
     startEditExpense: (id, expense) => dispatch(startEditExpense(id, expense)),

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 hmtl {
     // font-size: 62.5%; //for use w/ rems
 }
@@ -5,6 +9,8 @@ hmtl {
 body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
+    color: $dark-grey;
+    line-height: 1.6;
 }
 
 button {
